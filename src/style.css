@@ -1,45 +1,105 @@
 :root {
-    
+    --bg-color: rgb(23, 23, 23);
+    --text-color: rgb(192, 198, 211);
+    --light-red: rgb(83, 69, 69);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
 }
 
 body {
-    background-color: rgb(44, 44, 44);
-    font-family: "M PLUS Rounded 1c", sans-serif;
-    text-rendering: optimizeLegibility;
-    overflow-wrap: break-word;
-    color: rgb(240, 240, 240);
-    padding: 0px;
-    margin: 0px;
-}
-
-#nav {
-    align-items: center;
-    height: 10%;
-    display: flex;
+    background-color: black;
+    /* background: linear-gradient(black 70%, var(--light-red)); */
+    font-family: 'Roboto Condensed';
     margin: 0px;
     padding: 0px;
-    background-color: rgb(74, 81, 139);
-}
-
-.nav-link {
-    /* background-color: blue; */
-    margin: 4px;
-    padding: 5px;
-}
-
-#header {
-    background-color: red;
-
-}
-
-.asset {
-    justify-content: center;
     display: flex;
-    height: 100vh;
+    flex-direction: column;
+}
+
+/* ------------ LANDING ------------ */
+
+.landing {
     width: 100vw;
+    height: 100vh;
+    z-index: 1;
 }
 
-.asset > img {
-    padding: 10px;
+.landing-text {
+    color: var(--text-color);
+    font-size: 70px;
+    letter-spacing: 2vw;
 
+    display: flex;
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+span.landing-text {
+    display: flex;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    padding-left: 2vw;
+    border-radius: 10px;
+
+    animation: 2.5s ease-in 0s 1 title-on-load;
+}
+
+@keyframes title-on-load {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.spotlight:hover::before {
+    opacity: 1;
+}
+
+.spotlight::before {
+    background: radial-gradient(300px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.35),
+            transparent 60%);
+    content: "";
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    border-radius: inherit;
+
+    opacity: 0;
+    transition: width 700ms ease, height 700ms ease, opacity 500ms;
+
+    z-index: 1;
+}
+
+
+
+@media screen and (max-width: 400px) {
+    .landing-text {
+        font-size: 50px;
+        letter-spacing: 3vw;
+        background: linear-gradient(black 50%, rgba(255, 255, 255, 0.35))
+    }
+
+    .spotlight:hover::before {
+        opacity: 0;
+    }
+}
+
+/* ------------ NAV BAR ------------ */
+
+.nav {
+    background-color: red;
+    position: absolute;
+
+    z-index: 2;
 }
