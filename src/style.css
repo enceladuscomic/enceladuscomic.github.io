@@ -1,0 +1,45 @@
+:root {
+    
+}
+
+body {
+    background-color: rgb(44, 44, 44);
+    font-family: "M PLUS Rounded 1c", sans-serif;
+    text-rendering: optimizeLegibility;
+    overflow-wrap: break-word;
+    color: rgb(240, 240, 240);
+    padding: 0px;
+    margin: 0px;
+}
+
+#nav {
+    align-items: center;
+    height: 10%;
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(74, 81, 139);
+}
+
+.nav-link {
+    /* background-color: blue; */
+    margin: 4px;
+    padding: 5px;
+}
+
+#header {
+    background-color: red;
+
+}
+
+.asset {
+    justify-content: center;
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+.asset > img {
+    padding: 10px;
+
+}
