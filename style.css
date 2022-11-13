@@ -50,7 +50,7 @@ span.landing-text {
     padding-left: 2vw;
     border-radius: 10px;
     cursor: pointer;
-    /* animation: 2.5s ease-in 0s 1 title-on-load; */
+    animation: 2.5s ease-in 0s 1 title-on-load;
 }
 
 @keyframes title-on-load {
