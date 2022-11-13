@@ -36,8 +36,12 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-}
 
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
 
 span.landing-text {
     display: flex;
@@ -45,8 +49,8 @@ span.landing-text {
     padding-bottom: 3vh;
     padding-left: 2vw;
     border-radius: 10px;
-
-    animation: 2.5s ease-in 0s 1 title-on-load;
+    cursor: pointer;
+    /* animation: 2.5s ease-in 0s 1 title-on-load; */
 }
 
 @keyframes title-on-load {
