@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Poppins:wght@500&family=Roboto+Condensed&display=swap');
+
+:root {
+    --bg-color: rgb(23, 23, 23);
+    --text-color: rgb(192, 198, 211);
+    --body-text-color: rgba(255, 255, 255, 0.92);
+    --light-red: rgb(83, 69, 69);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+* {
+    word-wrap: break-word;
+    border-color: red;
+    border-width: 0;
+    border-style: solid;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #202023;
+    transition-property: background-color;
+    line-height: 1.5rem;
+    font-family: 'Roboto Condensed';
+    margin: 0px;
+    padding: 0px;
+    display: block;
+    flex-direction: column;
+    position: relative;
+    min-height: 100%;
+    color: var(--body-text-color);
+}
+
+.container {
+    width: 100%;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    max-width: 786px;
+    padding-inline-start: 1rem;
+    padding-inline-end: 1rem;
+    display: flex;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+main {
+    padding-bottom: 8rem;
+    display: block;
+}
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    background: #20202380;
+    z-index: 2;
+    backdrop-filter: blur(10px);
+    display: block;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    -webkit-box-align: center;
+    margin-right: 1.25rem;
+}
+
+.logo-text {
+    font-family: 'M PLUS Rounded 1c';
+    line-height: 1.2;
+
+}
+
+@media screen and (min-width: 48rem) {
+    .logo-text {
+        font-family: 'M PLUS Rounded 1c';
+        line-height: 1.2;
+    }
+}

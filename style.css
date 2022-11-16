@@ -12,9 +12,11 @@
     font-family: 'Roboto Condensed', sans-serif;
 }
 
-html {
-    scroll-behavior: smooth;
-    display: block;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* background-color: rgb(75, 77, 80); */
 }
 
 a {
@@ -58,7 +60,7 @@ body {
     -webkit-user-select: none;
 }
 
-button {
+/* button {
     background: none;
     color: inherit;
     border: inherit;
@@ -70,15 +72,15 @@ button {
     border-radius: 2rem;
     cursor: pointer;
     animation: 2.5s ease-in 0s 1 title-on-load;
-}
+} */
 
-span.landing-text {
+/* span.landing-text {
     display: flex;
     padding: 5vh;
     border-radius: 2rem;
     cursor: pointer;
     animation: 2.5s ease-in 0s 1 title-on-load;
-}
+} */
 
 @keyframes title-on-load {
     0% {
@@ -88,6 +90,13 @@ span.landing-text {
     100% {
         opacity: 1;
     }
+}
+
+.spotlight-container {
+    padding: 5vh;
+    border-radius: 2rem;
+    cursor: pointer;
+    animation: 2.5s ease-in 0s title-on-load;
 }
 
 .spotlight:hover::before {
@@ -135,29 +144,6 @@ span.landing-text {
         opacity: 0;
     }
 }
-
-
-/* -------------- MAIN ---------------- */
-
-main {
-    background-color: rgb(197, 162, 233);
-    z-index: 3;
-    height: 100vh;
-
-}
-
-
-/* -------------- NAV ---------------- */
-
-
-.nav {
-    background-color: red;
-    position: absolute;
-
-    z-index: 2;
-}
-
-
 
 /* ---------------- EYE --------------- */
 
@@ -309,3 +295,38 @@ main {
     top: 0px;
     left: 0px;
 } */
+
+
+/* -------------- NAV ---------------- */
+
+header {
+    color: var(--text-color);
+    font-size: 20px;
+    padding: 30px 10%;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 10px 20px;
+    /* border: 2px solid rgba(255, 255, 255, 0); */
+    border-radius: 10px;
+    transition: all 1s ease;
+}
+
+.nav-links li:hover {
+    /* padding: 8px 18px; */
+    /* border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 10px; */
+    /* border: 2px solid rgba(255, 255, 255, 0.5);
+    background: radial-gradient(100px circle at 50% 50%,
+            rgba(255, 255, 255, 0.35),
+            transparent 60%); */
+    opacity: 1;
+}

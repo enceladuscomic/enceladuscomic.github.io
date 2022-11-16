@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Poppins:wght@500&family=Roboto+Condensed&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(75, 77, 80);
+}
+
+header {
+    display: flex;
+    /* THIS IS WHAT CAUSES EVERYTHING TO BE CENTERED */
+    /* Can be flex-end */
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+
+h1,
+li,
+a,
+button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header h1 {
+    font-size: 25px;
+    /* This makes the h1 spaced out from the rest */
+    margin-right: auto;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav-links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav-links li a:hover {
+    color: #0088a9;
+}
+
+button {
+    padding: 9px 25px;
+    background-color: rgba(0, 136, 169, 1);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+button:hover {
+    background-color: rgba(0, 136, 169, 0.7);
+}
+
+header button {
+    margin-left: 3rem;
+}
