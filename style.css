@@ -1,15 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Poppins:wght@500&family=Roboto+Condensed&display=swap');
+
 :root {
     --bg-color: rgb(23, 23, 23);
     --text-color: rgb(192, 198, 211);
     --light-red: rgb(83, 69, 69);
+    --eye-size: 600px;
+    --iris-border-w: 5px;
+    --iris-border-color: #161e27;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     font-family: 'Poppins', sans-serif;
     font-family: 'Roboto Condensed', sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+}
+
 body {
     background-color: black;
-    /* background: linear-gradient(black 70%, var(--light-red)); */
     font-family: 'Roboto Condensed';
     margin: 0px;
     padding: 0px;
@@ -17,10 +32,10 @@ body {
     flex-direction: column;
 }
 
-/* ------------ LANDING ------------ */
+/* -------------- LANDING ---------------- */
 
 .landing {
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     z-index: 1;
 }
@@ -43,12 +58,24 @@ body {
     -webkit-user-select: none;
 }
 
+button {
+    background: none;
+    color: inherit;
+    border: inherit;
+    font: inherit;
+    outline: inherit;
+    display: flex;
+    padding: 5vh;
+    padding-right: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    animation: 2.5s ease-in 0s 1 title-on-load;
+}
+
 span.landing-text {
     display: flex;
-    padding-top: 3vh;
-    padding-bottom: 3vh;
-    padding-left: 2vw;
-    border-radius: 10px;
+    padding: 5vh;
+    border-radius: 2rem;
     cursor: pointer;
     animation: 2.5s ease-in 0s 1 title-on-load;
 }
@@ -85,11 +112,22 @@ span.landing-text {
     z-index: 1;
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 600px) {
+
+    span.landing {
+        padding: 2rem;
+    }
+
+    .landing-text {
+        letter-spacing: 1vw;
+    }
+}
+
+@media screen and (max-width: 450px) {
+
     .landing-text {
         font-size: 50px;
-        letter-spacing: 3vw;
-        background: linear-gradient(black 50%, rgba(255, 255, 255, 0.35))
+        text-align: center;
     }
 
     .spotlight:hover::before {
@@ -97,18 +135,159 @@ span.landing-text {
     }
 }
 
-/* ------------- MAIN -------------- */
 
-/* main {
+/* -------------- MAIN ---------------- */
+
+main {
     background-color: rgb(197, 162, 233);
-    z-index: 4;
-} */
+    z-index: 3;
+    height: 100vh;
 
-/* ------------ NAV BAR ------------ */
+}
+
+
+/* -------------- NAV ---------------- */
+
 
 .nav {
     background-color: red;
     position: absolute;
 
     z-index: 2;
+}
+
+
+
+/* ---------------- EYE --------------- */
+.eye-wrap {
+    height: var(--eye-size);
+    width: var(--eye-size);
+    max-width: 100%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 75% 0;
+    z-index: -1;
+}
+
+.eyelid {
+    width: calc(var(--eye-size) * 3 / 2);
+    height: calc(var(--eye-size) * 5 / 5);
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    z-index: inherit - 1;
+}
+
+#eyelid-span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    border-radius: 0 0 60% 60%;
+    z-index: inherit;
+    transition: 0.4s all;
+}
+
+@keyframes eye-open-animation {
+
+    0% {
+        height: 100%;
+    }
+
+    50% {
+        height: 90%;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
+
+@keyframes eye-close-animation {
+
+    0% {
+        height: 0%;
+    }
+
+    50% {
+        height: 10%;
+    }
+
+    100% {
+        height: 100%;
+    }
+}
+
+.eye {
+    background: rgb(233, 225, 225);
+    height: var(--eye-size);
+    width: var(--eye-size);
+    max-width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    border-radius: 60% 1%;
+    overflow: hidden;
+    z-index: -2;
+}
+
+.pupil {
+    width: calc(var(--eye-size) / 5);
+    height: calc(var(--eye-size) / 5);
+}
+
+.pupil,
+.iris,
+.iris2,
+.iris3,
+.iris4 {
+    border-radius: 50%;
+    border: 5px solid var(--iris-border-color);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: inherit;
+}
+
+.iris {
+    width: calc(var(--eye-size) / 3);
+    height: calc(var(--eye-size) / 3);
+}
+
+.iris2 {
+    width: calc(var(--eye-size) * 3 / 5);
+    height: calc(var(--eye-size) *3 / 5);
+}
+
+.iris3 {
+    width: calc(var(--eye-size) * 5 / 6);
+    height: calc(var(--eye-size) * 5 / 6);
+}
+
+.iris4 {
+    width: calc(var(--eye-size));
+    height: calc(var(--eye-size));
+}
+
+@media screen and (max-width: 900px) {
+    :root {
+        --eye-size: 400px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --eye-size: 300px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    :root {
+        --eye-size: 250px;
+    }
 }

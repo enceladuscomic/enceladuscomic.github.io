@@ -1,0 +1,140 @@
+:root {
+    --bg-color: rgb(23, 23, 23);
+    --text-color: rgb(192, 198, 211);
+    --light-red: rgb(83, 69, 69);
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+}
+
+body {
+    background-color: black;
+    font-family: 'Roboto Condensed';
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* -------------- LANDING ---------------- */
+
+.landing {
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+}
+
+.landing-text {
+    color: var(--text-color);
+    font-size: 70px;
+    letter-spacing: 2vw;
+
+    display: flex;
+    position: fixed;
+
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: inherit;
+    font: inherit;
+    outline: inherit;
+    display: flex;
+    padding: 5vh;
+    padding-right: 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    animation: 2.5s ease-in 0s 1 title-on-load;
+}
+
+span.landing-text {
+    display: flex;
+    padding: 5vh;
+    border-radius: 2rem;
+    cursor: pointer;
+    animation: 2.5s ease-in 0s 1 title-on-load;
+}
+
+@keyframes title-on-load {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.spotlight:hover::before {
+    opacity: 1;
+}
+
+.spotlight::before {
+    background: radial-gradient(300px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.35),
+            transparent 60%);
+    content: "";
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    border-radius: inherit;
+
+    opacity: 0;
+    transition: width 700ms ease, height 700ms ease, opacity 500ms;
+
+    z-index: 1;
+}
+
+@media screen and (max-width: 400px) {
+
+    .landing-text {
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .spotlight:hover::before {
+        opacity: 0;
+    }
+}
+
+
+/* -------------- MAIN ---------------- */
+
+main {
+    background-color: rgb(197, 162, 233);
+    z-index: 3;
+    height: 100vh;
+
+}
+
+
+/* -------------- NAV ---------------- */
+
+
+.nav {
+    background-color: red;
+    position: absolute;
+
+    z-index: 2;
+}

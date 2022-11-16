@@ -1,7 +1,6 @@
 let isOpen = false;
 
 function ani() {
-    console.log("clicked");
     let el = document.getElementById("eyelid-span");
     if (!isOpen) {
         el.style.animation = "1s ease-in eye-open-animation";
