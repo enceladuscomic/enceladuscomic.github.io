@@ -16,6 +16,8 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: 'Roboto Condensed';
+    color: var(--text-color);
     /* background-color: rgb(75, 77, 80); */
 }
 
@@ -27,7 +29,7 @@ a {
 
 body {
     background-color: black;
-    font-family: 'Roboto Condensed';
+    /* font-family: 'Roboto Condensed'; */
     margin: 0px;
     padding: 0px;
     display: flex;
@@ -303,30 +305,80 @@ header {
     color: var(--text-color);
     font-size: 20px;
     padding: 30px 10%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+
+}
+
+.nav-title-container {
+    margin-right: auto;
+    height: 100%;
+    display: flex;
+    font-size: 1.25rem;
+}
+
+.nav-title-container a {
+    display: inherit;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-title-icon {
+    display: flex;
+    max-width: 30px;
+    font-size: 2rem;
+    margin: auto;
+}
+
+.nav-title-icon:hover {
+    animation: 0.5s ease nav-icon-anim;
+    font-size: 2.25rem;
+    color: rgba(255, 255, 255, 1);
+    transition: font-size 0.5s ease;
+}
+
+@keyframes nav-icon-anim {
+    0% {
+        font-size: 2rem;
+        color: var(--text-color);
+    }
+
+    100% {
+        font-size: 2.25rem;
+        color: rgba(255, 255, 255, 1);
+    }
+}
+
+.nav-title-text {
+    height: 100%;
+    padding: 1rem;
+}
+
+ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
 }
 
 .nav-links {
     list-style: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
 }
 
 .nav-links li {
     display: inline-block;
     padding: 10px 20px;
-    /* border: 2px solid rgba(255, 255, 255, 0); */
     border-radius: 10px;
     transition: all 1s ease;
 }
 
 .nav-links li:hover {
-    /* padding: 8px 18px; */
-    /* border: 2px solid rgba(255, 255, 255, 0.5);
-    border-radius: 10px; */
-    /* border: 2px solid rgba(255, 255, 255, 0.5);
-    background: radial-gradient(100px circle at 50% 50%,
-            rgba(255, 255, 255, 0.35),
-            transparent 60%); */
     opacity: 1;
 }
+
+/* ---------------- MAIN ------------------ */
+
+main {}
