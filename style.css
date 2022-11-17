@@ -62,28 +62,6 @@ body {
     -webkit-user-select: none;
 }
 
-/* button {
-    background: none;
-    color: inherit;
-    border: inherit;
-    font: inherit;
-    outline: inherit;
-    display: flex;
-    padding: 5vh;
-    padding-right: 1rem;
-    border-radius: 2rem;
-    cursor: pointer;
-    animation: 2.5s ease-in 0s 1 title-on-load;
-} */
-
-/* span.landing-text {
-    display: flex;
-    padding: 5vh;
-    border-radius: 2rem;
-    cursor: pointer;
-    animation: 2.5s ease-in 0s 1 title-on-load;
-} */
-
 @keyframes title-on-load {
     0% {
         opacity: 0;
@@ -311,7 +289,6 @@ header {
     justify-content: space-between;
     align-items: center;
     z-index: 3;
-
 }
 
 .nav-title-container {
@@ -325,6 +302,7 @@ header {
     display: inherit;
     padding: 0;
     margin: 0;
+    transition: all 0.5s ease-in;
 }
 
 .nav-title-icon {
@@ -332,6 +310,7 @@ header {
     max-width: 30px;
     font-size: 2rem;
     margin: auto;
+    transition: font-size 0.5s ease;
 }
 
 .nav-title-icon:hover {
@@ -341,7 +320,7 @@ header {
     transition: font-size 0.5s ease;
 }
 
-@keyframes nav-icon-anim {
+/* @keyframes nav-icon-anim {
     0% {
         font-size: 2rem;
         color: var(--text-color);
@@ -351,7 +330,7 @@ header {
         font-size: 2.25rem;
         color: rgba(255, 255, 255, 1);
     }
-}
+} */
 
 .nav-title-text {
     height: 100%;
@@ -372,13 +351,43 @@ ul {
     display: inline-block;
     padding: 10px 20px;
     border-radius: 10px;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
 }
 
 .nav-links li:hover {
-    opacity: 1;
+    opacity: 0.6;
 }
+
 
 /* ---------------- MAIN ------------------ */
 
-main {}
+
+main {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    margin: 0px;
+}
+
+.main-container {
+    background-color: rgb(26, 26, 26);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.__page {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: grid;
+    transform: rotateY(0deg);
+    transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
+    transform-origin: 0% 0%;
+    background-color: var(--page-bg);
+    background-image: linear-gradient(90deg, rgba(227, 227, 227, 1) 0%, rgba(247, 247, 247, 0) 18%);
+}

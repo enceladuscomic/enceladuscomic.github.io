@@ -21,6 +21,10 @@ function ani() {
         el.style.animation = "1s ease-in eye-open-animation";
         el.style.height = "0%";
         isOpen = true;
+        setTimeout(function () {
+            window.location.href = "/main.html";
+        }, 1500);
+
     }
     else if (isOpen) {
         el.style.animation = "1s ease-in eye-close-animation";
