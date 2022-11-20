@@ -18,19 +18,18 @@ let isOpen = false;
 function ani() {
     let el = document.getElementById("eyelid-span");
     if (!isOpen) {
-        el.style.animation = "1s ease-in eye-open-animation";
+        // Opening eye
+        el.style.animation = "1.5s ease-in eye-open-animation";
         el.style.height = "0%";
         isOpen = true;
         setTimeout(function () {
             window.location.href = "/main.html";
-        }, 1500);
-
+        }, 2000);
     }
     else if (isOpen) {
+        // Closing eye
         el.style.animation = "1s ease-in eye-close-animation";
         el.style.height = "100%";
         isOpen = false;
     }
-    // document.getElementById("eyelid-span").style.animation = "1s ease-in eye-open-animation";
-    // document.getElementById("eyelid-span").style.height = "0%";
 };
