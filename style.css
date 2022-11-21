@@ -385,7 +385,7 @@ ul {
 
 @media screen and (max-width: 425px) {
     header {
-        padding: 5px 5px;
+        padding: 5px 15px;
     }
 
     .nav-title-container {
@@ -423,16 +423,30 @@ main {
     top: 100%;
     margin-top: 10vh;
     margin-bottom: 5vh;
-    /* border: 2px solid black; */
 }
 
 .info-text {
-    /* border: 1px solid red; */
     width: 100%;
     padding: 2rem;
     height: 10rem;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.info-text>h1,
+.info-text>h2 {
+    padding-bottom: 5px;
+}
+
+.info-text>h1 {
+    font-size: 2.5rem;
+    opacity: 0.9;
+}
+
+.info-text>h2 {
+    opacity: 0.7;
 }
 
 .display-comic {
@@ -445,21 +459,9 @@ main {
 }
 
 .display-comic>img {
-    /* padding */
-}
+    /* max-width: fit-content; */
 
-.__page {
-    position: relative;
-    width: 50%;
-    height: 100%;
-    display: grid;
-    transform: rotateY(0deg);
-    transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1);
-    transform-origin: 0% 0%;
-    background-color: var(--page-bg);
-    background-image: linear-gradient(90deg, rgba(227, 227, 227, 1) 0%, rgba(247, 247, 247, 0) 18%);
 }
-
 
 @media screen and (max-width: 450px) {
     .display-comic {
