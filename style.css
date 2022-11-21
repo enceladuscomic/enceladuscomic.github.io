@@ -422,7 +422,7 @@ main {
     position: relative;
     top: 100%;
     margin-top: 10vh;
-    margin-bottom: 5vh;
+    /* margin-bottom: 5vh; */
 }
 
 .info-text {
@@ -452,15 +452,16 @@ main {
 .display-comic {
     width: 100%;
     max-width: 40vw;
-    gap: 20px;
+    padding-bottom: 30px;
+    gap: 30px;
     display: flex;
     flex-direction: column;
     overflow: hidden;
 }
 
 .display-comic>img {
-    /* max-width: fit-content; */
-
+    box-shadow: 20px 20px 8px #0e0d0d;
+    margin: 0px 40px;
 }
 
 @media screen and (max-width: 450px) {
