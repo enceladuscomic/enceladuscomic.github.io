@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Poppins:wght@500&family=Roboto+Condensed&display=swap');
 
+/* ---------------- ** GENERAL ------------------- */
+
 :root {
     --bg-color: rgb(23, 23, 23);
     --bg-main-color: rgb(26, 26, 26);
-    --text-color: rgb(192, 198, 211);
+    --text-color: rgb(199, 206, 219);
     --light-red: rgb(83, 69, 69);
     --eye-size: 600px;
     --iris-border-w: 5px;
@@ -19,10 +21,10 @@
     padding: 0;
     font-family: 'Roboto Condensed';
     color: var(--text-color);
-    /* background-color: rgb(75, 77, 80); */
 }
 
-a {
+a,
+button {
     text-decoration: none;
     color: inherit;
     font-family: inherit;
@@ -30,14 +32,13 @@ a {
 
 body {
     background-color: black;
-    /* font-family: 'Roboto Condensed'; */
     margin: 0px;
     padding: 0px;
     display: flex;
     flex-direction: column;
 }
 
-/* -------------- LANDING ---------------- */
+/* -------------- ** LANDING ---------------- */
 
 .landing {
     width: 100%;
@@ -102,31 +103,7 @@ body {
     z-index: 1;
 }
 
-@media screen and (max-width: 600px) {
-
-    span.landing {
-        padding: 2rem;
-    }
-
-    .landing-text {
-        letter-spacing: 1vw;
-    }
-}
-
-@media screen and (max-width: 450px) {
-
-    .landing-text {
-        font-size: 50px;
-        text-align: center;
-        background: radial-gradient(400px circle at 0 0, rgba(255, 255, 255, 0.25), transparent 80%);
-    }
-
-    .spotlight:hover::before {
-        opacity: 0;
-    }
-}
-
-/* ---------------- EYE --------------- */
+/* ----- EYE ------ */
 
 .eye-wrap {
     height: var(--eye-size);
@@ -278,9 +255,12 @@ body {
 } */
 
 
-/* -------------- NAV ---------------- */
+/* ------ NAV ------ */
 
 header {
+    /* background-color: var(--bg-main-color); */
+    backdrop-filter: blur(5px);
+    /* box-shadow: 20px 20px 8px blur; */
     color: var(--text-color);
     padding: 30px 10%;
     width: 100%;
@@ -296,13 +276,17 @@ header {
     height: 100%;
     display: flex;
     font-size: 1.25rem;
+    transition: opacity 0.5s ease;
+}
+
+.nav-title-container:hover {
+    opacity: 0.6;
 }
 
 .nav-title-container a {
     display: inherit;
     padding: 0;
     margin: 0;
-    transition: all 0.5s ease-in;
 }
 
 .nav-title-icon {
@@ -310,20 +294,28 @@ header {
     max-width: 30px;
     font-size: 2rem;
     margin: auto;
-    transition: font-size 0.5s ease;
-}
-
-.nav-title-icon:hover {
-    animation: 0.5s ease nav-icon-anim;
-    font-size: 2.25rem;
-    color: rgba(255, 255, 255, 1);
-    transition: font-size 0.5s ease;
 }
 
 .nav-title-text {
     height: 100%;
     padding: 1rem;
 }
+
+/* .nav-links-container>button {
+    text-align: center;
+    background-color: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+    padding: 10px 12px;
+    display: inline-block;
+    cursor: pointer;
+    transition: 0.5s ease all;
+}
+
+.nav-links-container>button:hover {
+    background-color: rgba(255, 255, 255, 0.10);
+    transition: 0.5s ease all;
+} */
 
 ul {
     width: 100%;
@@ -347,7 +339,7 @@ ul {
     opacity: 0.6;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 800px) {
     header {
         padding: 15px 10%;
     }
@@ -365,7 +357,7 @@ ul {
     }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 700px) {
     header {
         padding: 15px 20px;
     }
@@ -408,6 +400,7 @@ main {
     width: 100%;
     height: 100%;
     padding: 0px;
+    padding-top: 40px;
     margin: 0px;
     background-color: var(--bg-main-color);
 }
@@ -416,32 +409,34 @@ main {
     display: inline-flex;
     flex-direction: column;
     width: 100%;
-    height: 100%;
     justify-content: center;
     align-items: center;
     position: relative;
     top: 100%;
     margin-top: 10vh;
-    /* margin-bottom: 5vh; */
+    text-align: center;
+    line-height: 2rem;
 }
 
 .info-text {
-    width: 100%;
+    color: white;
     padding: 2rem;
-    height: 10rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.info-text>h1,
-.info-text>h2 {
-    padding-bottom: 5px;
+.info-text-top {
+    background-color: rgba(109, 109, 109, 0.267);
+    border-radius: 20px;
+    margin: 3rem;
+    padding: 3rem;
 }
 
 .info-text>h1 {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    padding-bottom: 1rem;
     opacity: 0.9;
 }
 
@@ -449,19 +444,28 @@ main {
     opacity: 0.7;
 }
 
+.info-text>p {
+    padding-top: 8px;
+    opacity: 0.9;
+}
+
 .display-comic {
     width: 100%;
-    max-width: 40vw;
     padding-bottom: 30px;
     gap: 30px;
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
 }
 
 .display-comic>img {
     box-shadow: 20px 20px 8px #0e0d0d;
     margin: 0px 40px;
+    max-width: 700px;
+    width: 100%;
+    height: auto;
 }
 
 @media screen and (max-width: 450px) {
@@ -471,30 +475,47 @@ main {
     }
 }
 
-
 .container {
     width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
-    padding: 5vw 5vh;
+    padding: 10rem;
+}
+
+.container * {
+    padding: 8px 0px;
+}
+
+.container h1 {
+    font-size: 60px;
+}
+
+.container h3 {
+    font-size: 30px;
+}
+
+.container p {
+    font-size: 30px;
 }
 
 
-/* ------------ FOOTER -------------- */
+
+/* ------------ ** FOOTER -------------- */
 
 footer {
     background-color: var(--bg-main-color);
     width: 100%;
-    /* border: 1px solid red; */
-    padding: 50px 30px;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
+    letter-spacing: 0.05em;
+    line-height: 1.1em;
 }
 
 footer>a>img {
