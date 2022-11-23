@@ -40,26 +40,25 @@ function ani() {
 
 // Hide navbar on scroll
 
-var prevScrollPos = window.pageYOffset;
 window.onscroll = function () {
     var currentScrollPos = window.pageYOffset;
     let header = document.getElementsByTagName("header")[0];
+    // let headerNav = header.getElementsByClassName(".")
     if (currentScrollPos > 0) {
-        header.style.paddingTop = "1vh";
-        header.style.paddingBottom = "1vh";
+        header.style.paddingTop = "0.1vh";
+        header.style.paddingBottom = "0.1vh";
     }
     else {
-        header.style.paddingTop = "4vh";
-        header.style.paddingBottom = "4vh";
+        header.style.paddingTop = "3vh";
+        header.style.paddingBottom = "3vh";
     }
-    // if (prevScrollPos > currentScrollPos) {
-    //     header.style.paddingTop = "4vh";
-    //     header.style.paddingBottom = "4vh";
-
-    // }
-    // else {
-    //     header.style.paddingTop = "1vh";
-    //     header.style.paddingBottom = "1vh";
-    // }
-    prevScrollPos = currentScrollPos;
 }
+
+// Button to scroll read
+
+// function scrollArrowFunction(target) {
+//     const y = target.getBoundingClientRect().top + window.pageYOffset - 80;
+//     window.scrollTo({
+//         top: y, left: 100, behavior: "smooth"
+//     });
+// };
