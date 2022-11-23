@@ -5,6 +5,8 @@
 :root {
     --bg-color: rgb(23, 23, 23);
     --bg-main-color: rgb(26, 26, 26);
+    --bg-color-secondary: rgb(66, 66, 66);
+    --bg-color-nav: rgba(119, 119, 119, 0.178);
     --text-color: rgb(199, 206, 219);
     --light-red: rgb(83, 69, 69);
     --eye-size: 600px;
@@ -258,17 +260,17 @@ body {
 /* ------ NAV ------ */
 
 header {
-    /* background-color: var(--bg-main-color); */
     backdrop-filter: blur(5px);
-    /* box-shadow: 20px 20px 8px blur; */
+    background-color: var(--bg-color-nav);
     color: var(--text-color);
-    padding: 30px 10%;
+    padding: 4vh 5vw;
     width: 100%;
     position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 3;
+    transition: padding-bottom 0.25s ease, padding-top 0.25s ease;
 }
 
 .nav-title-container {
@@ -300,22 +302,6 @@ header {
     height: 100%;
     padding: 1rem;
 }
-
-/* .nav-links-container>button {
-    text-align: center;
-    background-color: transparent;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 5px;
-    padding: 10px 12px;
-    display: inline-block;
-    cursor: pointer;
-    transition: 0.5s ease all;
-}
-
-.nav-links-container>button:hover {
-    background-color: rgba(255, 255, 255, 0.10);
-    transition: 0.5s ease all;
-} */
 
 ul {
     width: 100%;
@@ -400,7 +386,7 @@ main {
     width: 100%;
     height: 100%;
     padding: 0px;
-    padding-top: 40px;
+    padding-top: 8%;
     margin: 0px;
     background-color: var(--bg-main-color);
 }
@@ -425,10 +411,11 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    line-height: 1.5rem;
 }
 
 .info-text-top {
-    background-color: rgba(109, 109, 109, 0.267);
+    background-color: var(--bg-color-secondary);
     border-radius: 20px;
     margin: 3rem;
     padding: 3rem;
@@ -445,8 +432,16 @@ main {
 }
 
 .info-text>p {
-    padding-top: 8px;
+    padding-top: 15px;
     opacity: 0.9;
+}
+
+@media screen and (max-width: 450px) {
+    .info-text {
+        padding: 1.5rem;
+    }
+
+    .info-text>p {}
 }
 
 .display-comic {
