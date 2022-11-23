@@ -1,3 +1,5 @@
+// Spotlight effect
+
 const handleOnMouseMove = e => {
     const { currentTarget: target } = e;
 
@@ -12,6 +14,8 @@ const handleOnMouseMove = e => {
 for (const stage of document.querySelectorAll(".spotlight")) {
     stage.onmousemove = e => handleOnMouseMove(e);
 }
+
+// Eye opening/closing animation
 
 let isOpen = false;
 
@@ -33,3 +37,29 @@ function ani() {
         isOpen = false;
     }
 };
+
+// Hide navbar on scroll
+
+var prevScrollPos = window.pageYOffset;
+window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    let header = document.getElementsByTagName("header")[0];
+    if (currentScrollPos > 0) {
+        header.style.paddingTop = "1vh";
+        header.style.paddingBottom = "1vh";
+    }
+    else {
+        header.style.paddingTop = "4vh";
+        header.style.paddingBottom = "4vh";
+    }
+    // if (prevScrollPos > currentScrollPos) {
+    //     header.style.paddingTop = "4vh";
+    //     header.style.paddingBottom = "4vh";
+
+    // }
+    // else {
+    //     header.style.paddingTop = "1vh";
+    //     header.style.paddingBottom = "1vh";
+    // }
+    prevScrollPos = currentScrollPos;
+}
