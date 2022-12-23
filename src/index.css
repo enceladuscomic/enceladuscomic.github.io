@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@700&family=Poppins:wght@500&family=Roboto+Condensed&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Roboto Condensed' -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: black;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+
+:root {
+  --bg-color: rgb(23, 23, 23);
+  --bg-main-color: rgb(26, 26, 26);
+  --bg-color-secondary: rgb(66, 66, 66);
+  --bg-color-nav: rgba(51, 51, 51, 0.541);
+  --text-color: rgb(199, 206, 219);
+  --light-red: rgb(83, 69, 69);
+  --eye-size: 600px;
+  --iris-border-w: 5px;
+  --iris-border-color: #161e27;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Condensed';
+  color: var(--text-color);
+}
+
+/* -------------- ** LANDING ---------------- */
+
+.landing {
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+}
+
+.landing-text {
+  color: var(--text-color);
+  font-size: 70px;
+  letter-spacing: 2vw;
+
+  display: flex;
+  position: fixed;
+
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+}
+
+@keyframes title-on-load {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.spotlight-container {
+  padding-top: 6vh;
+  padding-bottom: 6vh;
+  /* padding-left: 35px; */
+  border-radius: 2rem;
+  cursor: pointer;
+  animation: 2.5s ease-in 0s title-on-load;
+}
+
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+.spotlight::before {
+  background: radial-gradient(500px circle at var(--mouse-x) var(--mouse-y),
+      rgba(255, 255, 255, 0.35),
+      transparent 60%);
+  content: "";
+  height: 100%;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+  position: absolute;
+  border-radius: inherit;
+
+  opacity: 0;
+  transition: width 700ms ease, height 700ms ease, opacity 500ms;
+  z-index: 1;
+}
+
+@media screen and (max-width: 600px) {
+
+  span.landing {
+    padding: 2rem;
+  }
+
+  .landing-text {
+    letter-spacing: 1vw;
+  }
+}
+
+@media screen and (max-width: 450px) {
+
+  .landing-text {
+    font-size: 50px;
+    text-align: center;
+    background: radial-gradient(400px circle at 0 0, rgba(255, 255, 255, 0.25), transparent 80%);
+  }
+
+  .spotlight:hover::before {
+    opacity: 0;
+  }
+}
+
+/* ----- EYE ------ */
+
+.eye-wrap {
+  height: var(--eye-size);
+  width: var(--eye-size);
+  max-width: 100%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 75% 0;
+  z-index: -1;
+}
+
+.eyelid {
+  width: calc(var(--eye-size) * 3 / 2);
+  height: calc(var(--eye-size) * 5 / 5);
+  top: 50%;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  z-index: inherit - 1;
+}
+
+#eyelid-span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(0, 0, 0);
+  border-radius: 0 0 60% 60%;
+  z-index: inherit;
+  transition: 0.4s all;
+}
+
+.eye {
+  background: rgb(233, 225, 225);
+  height: var(--eye-size);
+  width: var(--eye-size);
+  max-width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-radius: 60% 1%;
+  overflow: hidden;
+  z-index: -2;
+}
+
+.pupil {
+  width: calc(var(--eye-size) / 5);
+  height: calc(var(--eye-size) / 5);
+}
+
+.pupil,
+.iris,
+.iris2,
+.iris3,
+.iris4 {
+  border-radius: 50%;
+  border: 5px solid var(--iris-border-color);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: inherit;
+}
+
+.iris {
+  width: calc(var(--eye-size) / 3);
+  height: calc(var(--eye-size) / 3);
+}
+
+.iris2 {
+  width: calc(var(--eye-size) * 3 / 5);
+  height: calc(var(--eye-size) *3 / 5);
+}
+
+.iris3 {
+  width: calc(var(--eye-size) * 5 / 6);
+  height: calc(var(--eye-size) * 5 / 6);
+}
+
+.iris4 {
+  width: calc(var(--eye-size));
+  height: calc(var(--eye-size));
+}
+
+@media screen and (max-width: 900px) {
+  :root {
+    --eye-size: 400px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  :root {
+    --eye-size: 300px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  :root {
+    --eye-size: 250px;
+  }
+}
